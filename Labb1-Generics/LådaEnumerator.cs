@@ -15,7 +15,7 @@ namespace Labb1_Generics
         {
             this._lådor = låda;
             curIndex = -1;
-            curLåda = default(Låda);
+            curLåda = default(Låda); // Default is object of class Låda
         }
 
         public Låda Current

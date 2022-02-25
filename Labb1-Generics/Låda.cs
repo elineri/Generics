@@ -6,19 +6,21 @@ namespace Labb1_Generics
 {
     public class Låda : IEquatable<Låda>
     {
-        // Dimensions for height, length and width to test if the boxes are equal
         public Låda(int h, int l, int b)
         {
             this.höjd = h;
             this.längd = l;
             this.bredd = b;
         }
+
+        // Dimensions for height, length and width to check if the boxes are equal
+
         public int höjd { get; set; }
         public int längd { get; set; }
         public int bredd { get; set; }
 
 
-        public bool Equals(Låda other)
+        public bool Equals(Låda other) // Checks if two objects are equal
         {
             if (new LådaSameDimensions().Equals(this, other))
             {
@@ -29,15 +31,5 @@ namespace Labb1_Generics
                 return false;
             }
         }
-
-        //public override bool Equals(object obj)
-        //{
-        //    return base.Equals(obj);
-        //}
-
-        //public override int GetHashCode()
-        //{
-        //    return base.GetHashCode();
-        //}
     }
 }

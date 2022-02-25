@@ -19,14 +19,14 @@ namespace Labb1_Generics
 
         private List<Låda> innerCol;
 
-        public LådaCollection()
+        public LådaCollection() // Ctor to give innerCol a default value
         {
             innerCol = new List<Låda>();
         }
 
         public Låda this[int index]
         {
-            get { return (Låda)innerCol[index]; }
+            get { return (Låda)innerCol[index]; } // Typecast to innerCol
             set { innerCol[index] = value; }
         }
 
@@ -58,7 +58,7 @@ namespace Labb1_Generics
             return found;
         }
 
-        public void Add(Låda item)
+        public void Add(Låda item) // Add method uses contains method to check if it has unique dimensions
         {
             if (!Contains(item))
             {
@@ -67,7 +67,7 @@ namespace Labb1_Generics
             else
             {
                 Console.WriteLine($"En låda med dessa dimensionerna " +
-                    $"(Höjd {item.höjd}, Bredd {item.bredd}, Längd {item.längd}) finns redan.");
+                    $"(Höjd {item.höjd.ToString()}, Bredd {item.bredd.ToString()}, Längd {item.längd.ToString()}) finns redan.");
             }
         }
 
@@ -81,7 +81,7 @@ namespace Labb1_Generics
             get { return innerCol.Count; }
         }
 
-        public void CopyTo(Låda[] array, int arrayIndex)
+        public void CopyTo(Låda[] array, int arrayIndex) // Copies elements to innerCol
         {
             if (array == null)
                 throw new ArgumentNullException("Arrayen kan inte vara null");

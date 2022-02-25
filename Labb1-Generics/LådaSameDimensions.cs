@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Labb1_Generics
 {
+    // Class to compare dimensions of the boxes to check if equal
     public class LådaSameDimensions : EqualityComparer<Låda>
     {
         // Compares if the objects are equal
@@ -20,7 +21,7 @@ namespace Labb1_Generics
             }
         }
 
-        public override int GetHashCode(Låda låd)
+        public override int GetHashCode(Låda låd) // Used to check if objects have same hash code
         {
             var hCode = låd.bredd ^ låd.höjd ^ låd.längd;
             return hCode.GetHashCode();

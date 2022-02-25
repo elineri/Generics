@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Labb1_Generics
 {
+    // Class to compare volume of the boxes to check if equal
     public class LådaSameVolume : EqualityComparer<Låda>
     {
         public override bool Equals(Låda L1, Låda L2)
@@ -19,7 +20,7 @@ namespace Labb1_Generics
             }
         }
 
-        public override int GetHashCode(Låda låd)
+        public override int GetHashCode(Låda låd) // Used to check if objects have same hash code
         {
             int hCode = låd.bredd ^ låd.höjd ^ låd.längd;
             Console.WriteLine("Hash code: " + hCode,GetHashCode());
